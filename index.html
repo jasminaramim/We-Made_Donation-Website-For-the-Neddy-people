@@ -22,3 +22,70 @@
             <span class="lg:text-lg text-xl font-semibold">Balance: <span id="account-balance">BDT 1000</span></span>
         </div>
     </nav>
+    <main>
+        <!-- Buttons -->
+    <section>
+        <div class="flex justify-center gap-5 mt-8">
+            <button id="donationBtn" class="btn btn-accent">Donation</button>
+            <button id="historyBtn" class="btn btn-accent">History</button>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section id="donation-section" class="grid grid-cols-1 md:grid-cols-3 items-center gap-6 p-6">
+        <!-- Donation Card 1 -->
+        <div class="card shadow-lg p-4 lg:w-[1140px] border border-gray-400 lg:h-[460px]">
+            <div class="lg:flex">
+                <img src="./assets/noakhali.png" class="lg:w-[550px] lg:h-[390px] w-[350px] rounded-md" alt="Noakhali">
+                <div class="ml-4 lg:w-[470px] lg:h-[390px]">
+                    <div class="flex lg:mt-0 mt-4">
+                        <img src="./assets/coin.png" alt="Coin">
+                        <p><span id="donation-amount-1">500 BDT</span></p>
+                    </div>
+                    <h2 class="font-bold text-3xl">Help the Homeless in Noakhali</h2>
+                    <p class="text-gray-600 text-xl">The recent floods in Noakhali have caused significant damage. Your donation will provide essential supplies to those affected.The recent floods in Noakhali have caused significant damage. </p>
+                    <input type="number" id="donation-input-1" class="input input-bordered w-full max-w-xs mt-2" placeholder="Enter amount">
+                    <br>
+                    <button class="btn btn-accent mt-2" onclick="donate(1, 'Noakhali Homeless')">Donate Now</button>
+                </div>
+            </div>
+        </div>
+        </section >
+        <!-- Donation Card 2 -->
+         <section id="donation-section-two" class="ml-6 mt-5">
+        <div class="card border border-gray-400 shadow-lg p-4 lg:w-[1140px] lg:h-[460px]">
+            <div class="lg:flex">
+                <img src="./assets/feni.png" class="lg:w-[550px] lg:h-[390px] w-[350px] rounded-md" alt="Feni">
+                <div class="ml-4 lg:w-[470px] lg:h-[390px]">
+                    <div class="flex lg:mt-0 mt-4">
+                        <img src="./assets/coin.png" alt="Coin">
+                        <p><span id="donation-amount-two">500 BDT</span></p>
+                    </div>
+                    <h2 class="font-bold text-3xl">Support Education in Feni</h2>
+                    <p class="text-gray-600 text-xl">Your donation will help rebuild schools damaged by recent storms.The recent floods in Noakhali have caused significant damage. Your donation will provide essential supplies to those affected.</p>
+                    <input type="number" id="donation-input-2" class="input input-bordered w-full max-w-xs mt-2" placeholder="Enter amount">
+                    <br>
+                    <button class="btn btn-accent mt-2" onclick="donate(2, 'Feni Education')">Donate Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+        <!-- Donation Card 3 -->
+         <section id="donation-section-three" class="ml-6 mt-5 mb-7 ">
+        <div class="card border border-gray-400 shadow-lg p-4 lg:w-[1140px] lg:h-[460px]">
+            <div class="lg:flex">
+                <img src="./assets/quota-protest.png" class="lg:w-[550px] lg:h-[390px] w-[350px] rounded-md" alt="Quota Protest">
+                <div class="ml-4 lg:w-[470px] lg:h-[390px]">
+                    <div class="flex lg:mt-0 mt-4">
+                        <img src="./assets/coin.png" alt="Coin">
+                        <p><span id="donation-amount-three">500 BDT</span></p>
+                    </div>
+                    <h2 class="font-bold text-3xl">Health Relief for Quota Protesters</h2>
+                    <p class="text-gray-600 text-xl"> The recent floods in Noakhali have caused significant damage to homes  infrastructure. Your donation will help provide essential supplies and  to those affected by this disaster. Every contribution, big or small, makes  difference. Please join us in supporting the relief efforts and making a positive impact on the lives of those in need.</p>
+                    <input type="number" id="donation-input-3" class="input input-bordered w-full max-w-xs mt-2" placeholder="Enter amount">
+                    <br>
+                    <button class="btn btn-accent mt-2" onclick="donate(3, 'Quota Protesters Relief')">Donate Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
