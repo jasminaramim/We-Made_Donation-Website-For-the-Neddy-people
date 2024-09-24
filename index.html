@@ -111,3 +111,127 @@
     </div>
 </div>
 </main>
+<!-- JavaScript -->
+<script>
+
+    // button section
+    document.getElementById('blogLink').addEventListener('click', function() {
+        window.location.href = 'blog.html'});
+    
+    let balance = 1000;
+    const donationHistory = [];
+
+    let donationAmount1 = 500;
+    let donationAmount2 = 500;
+    let donationAmount3 = 500;
+
+   
+    const balanceElement = document.getElementById('account-balance');
+    const historySection = document.getElementById('history-section');
+    const donationSection = document.getElementById('donation-section');
+    const historyList = document.getElementById('history-list');
+    const successModal = document.getElementById('success-modal');
+
+   
+    function showModal() {
+        successModal.classList.remove('hidden');
+    }
+
+   
+    function closeModal() {
+        successModal.classList.add('hidden');
+    }
+
+
+    // Update balance function
+    function updateBalance(amount) {
+        balance -= amount;
+        balanceElement.innerText = 'BDT ' + balance;
+    }
+
+    // Update donation  function
+    function updateDonationAmount(id, amount) {
+        let donationAmountElement;
+        if (id === 1) {
+            donationAmount1 += amount;
+            donationAmountElement = document.getElementById('donation-amount-1');
+            donationAmountElement.innerText = donationAmount1 + ' BDT';
+        } else if (id === 2) {
+            donationAmount2 += amount;
+            donationAmountElement = document.getElementById('donation-amount-two');
+            donationAmountElement.innerText = donationAmount2 + ' BDT';
+        } else if (id === 3) {
+            donationAmount3 += amount;
+            donationAmountElement = document.getElementById('donation-amount-three');
+            donationAmountElement.innerText = donationAmount3 + ' BDT';
+        }
+    }
+    function getCurrentDateTime() {
+    const now = new Date();
+    return now.toLocaleString('en-US', {
+        weekday: 'short',
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+}
+// Add donation to history with date and time
+function addDonationToHistory(amount, cause) {
+    const dateTime = getCurrentDateTime();
+    donationHistory.push({ amount, cause, dateTime });
+    
+    const historyItem = document.createElement('li');
+    historyItem.innerHTML = `Donated BDT ${amount} to ${cause} on ${dateTime}`;
+    historyList.appendChild(historyItem);
+}
+    
+
+    // Donation function
+    function donate(id, cause) {
+        const donationInput = document.getElementById('donation-input-' + id);
+        const amount = parseInt(donationInput.value);
+
+        if (isNaN(amount) || amount <= 0 || amount > balance) {
+            alert("Please enter a valid donation amount that doesn't exceed your balance.");
+            return;
+        }
+
+        // Update balance and donation
+        updateBalance(amount);
+        updateDonationAmount(id, amount);
+        addDonationToHistory(amount, cause);
+
+        // Show success modal
+        showModal();
+
+        // Clear the input field
+        donationInput.value = '';
+    }
+
+// Event listener for "History" button
+document.getElementById('historyBtn').addEventListener('click', () => {
+
+document.getElementById('donation-section').classList.add('hidden');
+document.getElementById('donation-section-two').classList.add('hidden');
+document.getElementById('donation-section-three').classList.add('hidden');
+
+historySection.classList.remove('hidden');
+});
+
+// Event listener for "Donation" button
+document.getElementById('donationBtn').addEventListener('click', () => {
+
+document.getElementById('donation-section').classList.remove('hidden');
+document.getElementById('donation-section-two').classList.remove('hidden');
+document.getElementById('donation-section-three').classList.remove('hidden');
+
+historySection.classList.add('hidden');
+});
+
+
+</script>
+</body>
+</html>
