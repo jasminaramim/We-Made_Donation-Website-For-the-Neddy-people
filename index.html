@@ -89,3 +89,25 @@
             </div>
         </div>
     </section>
+ <!-- Donation History Section -->
+ <section id="history-section" class="hidden p-6">
+    <h2 class="text-2xl font-bold">Donation History</h2>
+    <ul id="history-list" class="list-disc ml-6 mt-4">
+        <!-- Donation history will appear here -->
+    </ul>
+</section>
+
+<!-- Success Modal -->
+<div id="success-modal" class="hidden fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center">
+    <div class="modal-box">
+        <h3 class="font-bold text-2xl text-center mb-4">Congrats!</h3>
+        <div class="flex justify-center mb-4">
+            <span class="text-5xl">💰</span>
+        </div>
+        <p class="text-center text-lg">You Have Donated for Humankind Successfully</p>
+        <div class="modal-action justify-center mt-4">
+            <button class="btn btn-accent" onclick="closeModal()">Close Confirmation</button>
+        </div>
+    </div>
+</div>
+</main>
