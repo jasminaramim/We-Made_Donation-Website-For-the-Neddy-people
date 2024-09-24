@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="sticky z-50 top-0 bg-gray-700 backdrop:filter border border-gray-100 backdrop-blur-sm bg-opacity-20  p-4 flex justify-between items-center ">
+        
+        <button id="blogLink" class="btn btn-outline ml-4">Blog</button> 
+        <div class="flex items-center space-x-4">
+            <img class="lg:w-[30px] w-[20px] ml-6" src="./assets/logo.png" alt="Logo">
+            <h1 class="lg:text-2xl text-xl font-bold">Donate Bangladesh</h1>
+        </div>
+        <div class="flex items-center">
+            <img src="./assets/coin.png" alt="Coin">
+            <span class="lg:text-lg text-xl font-semibold">Balance: <span id="account-balance">BDT 1000</span></span>
+        </div>
+    </nav>
